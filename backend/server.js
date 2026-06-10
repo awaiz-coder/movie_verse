@@ -19,11 +19,11 @@ app.use('/api/movies', require('./routes/movies'));
 app.use('/api/reviews', require('./routes/reviews'));
 app.use('/api/users', require('./routes/users'));
 
+console.log("MONGODB_URI =", process.env.MONGODB_URI);
+const dns = require("dns"); dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://awaizkalyani_db_user:Awaiz%409747@cluster0.haavhvs.mongodb.net/movieverse', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://awaizkalyani_db_user:Awaiz%409747@cluster0.haavhvs.mongodb.net/movieverse');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
