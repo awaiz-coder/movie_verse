@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const resetAdmin = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/movieverse');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://awaizkalyani_db_user:Awaiz%409747@cluster0.haavhvs.mongodb.net/');
     
     // Delete existing admin
     await User.deleteOne({ email: 'admin@movieverse.com' });
