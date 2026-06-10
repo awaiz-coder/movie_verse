@@ -441,7 +441,7 @@ const createAdminUser = async () => {
 
 const seedDatabase = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/movieverse');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://awaizkalyani_db_user:Awaiz%409747@cluster0.haavhvs.mongodb.net/movieverse');
     console.log('Connected to MongoDB');
 
     // Clear existing movies and create new ones
