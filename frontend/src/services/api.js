@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://movie-verse-amber.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
 });
+
 
 // Add token to requests
 api.interceptors.request.use((config) => {
@@ -65,5 +66,7 @@ export const usersAPI = {
   toggleWatchlist: (movieId) => api.post(`/users/watchlist/${movieId}`),
   getWatchlist: () => api.get('/users/watchlist'),
 };
+
+
 
 export default api;
